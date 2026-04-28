@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Алекс Новиков — Разработчик</title>
+  <meta name="description" content="Веб-разработчик из России. Создаю адаптивные лендинги, сайты-визитки и веб-приложения. Специализируюсь на React, Next.js и дизайне, ориентированном на результат." />
+  <meta name="keywords" content="веб-разработка, фронтенд, лендинг, React, Next.js, дизайн, Россия" />
+  <meta property="og:title" content="Алекс Новиков — Фронтенд разработчик" />
+  <meta property="og:description" content="Разработка адаптивных сайтов и веб-приложений. Честный подход к технологиям, внимание к деталям, адекватные сроки." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#7c6af7" />
+  <title>Алекс Новиков — Фронтенд разработчик, лендинги и веб-приложения</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -905,6 +911,174 @@
       animation: fadeInUp 1s ease-out both;
     }
 
+    /* Contact Form Styles */
+    .contact-form-section {
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, rgba(124, 106, 247, 0.08), rgba(236, 72, 153, 0.08));
+      border-top: 1px solid var(--border);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .contact-form-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--accent), #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124, 106, 247, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn-submit {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 32px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 1rem;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(124, 106, 247, 0.45);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    /* Portfolio grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(124,106,247,0.2);
+    }
+
+    .portfolio-preview {
+      height: 200px;
+      background: linear-gradient(135deg, var(--accent), #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .portfolio-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .portfolio-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .portfolio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .portfolio-tag {
+      background: rgba(124,106,247,0.12);
+      border: 1px solid rgba(124,106,247,0.25);
+      color: var(--accent2);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .portfolio-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--accent2);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .portfolio-link:hover {
+      color: var(--accent);
+    }
+
     @media (max-width: 1024px) {
       .process-grid {
         gap: 2rem;
@@ -916,6 +1090,10 @@
 
       .final-cta h2 {
         font-size: 2rem;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
     }
 
@@ -937,25 +1115,30 @@
         padding: 1.5rem;
       }
 
-      .final-cta {
-        padding: 4rem 1.5rem;
+      .contact-form-section {
+        padding: 3rem 1.5rem;
       }
 
-      .final-cta h2 {
-        font-size: 1.75rem;
+      .contact-form-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
         margin-bottom: 1rem;
       }
 
-      .final-cta p {
-        font-size: 1rem;
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-card {
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
-
-<body>
-
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
@@ -965,21 +1148,18 @@
       <img src="images/me.jpg" alt="Алекс Новиков" class="avatar">
     </div>
     <div class="hero-content">
-      <div class="urgency">
-        <p>⏰ Ограниченное количество проектов в месяц — всего 3 места</p>
-      </div>
-      <h1>Разрабатываю сайты, которые приводят клиентов и заявки</h1>
-      <p class="subtitle">Лендинги, сайты-визитки и веб-приложения для бизнеса. От идеи до запуска за 2–4 недели — с фокусом на результат, удобство и рост продаж.</p>
-      <p class="role">5+ лет опыта · 40+ проектов · 20+ довольных клиентов · <span>Готов к работе</span></p>
+      <h1>Создаю адаптивные сайты, которые работают</h1>
+      <p class="subtitle">Лендинги, сайты-визитки и веб-приложения на React и Next.js. Честный подход, понятные сроки (2–4 недели), внимание к деталям и результату.</p>
+      <p class="role">Фронтенд разработчик · 10+ проектов · <span>Работаю над своими навыками</span></p>
       <div class="buttons">
-      <button class="btn" id="ctaBtn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 4.87 2 2 0 0 1 3.59 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10a16 16 0 0 0 6.08 6.08l.92-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.5z"/></svg>
-        Обсудить проект бесплатно
-      </button>
-      <a href="https://t.me/dimaminsk?text=Здравствуйте!%20Хочу%20сайт,%20который%20будет%20приводить%20клиентов" class="telegram-btn" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-        Написать в Telegram
-      </a>
+        <button class="btn" id="ctaBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 4.87 2 2 0 0 1 3.59 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10a16 16 0 0 0 6.08 6.08l.92-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.5z"/></svg>
+          Обсудить проект
+        </button>
+        <a href="#contact" class="telegram-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Написать в Telegram
+        </a>
       </div>
     </div>
     <div class="socials" style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);">
@@ -999,74 +1179,69 @@
   </section>
 
   <section class="section why-choose">
-    <h2>Почему выбирают меня</h2>
+    <h2>Почему стоит со мной работать</h2>
     <div class="why-choose-grid">
       <div class="why-choose-item">
         <div class="why-choose-icon">🎯</div>
-        <h3>Не просто сайт, а инструмент продаж</h3>
-        <p>Каждый пиксель работает на результат. Фокусируюсь на конверсии, не просто на красоте.</p>
+        <h3>Ориентирован на результат</h3>
+        <p>Обсуждаю ваши бизнес-цели перед разработкой. Сайт должен решать задачи, а не просто быть красивым.</p>
       </div>
       <div class="why-choose-item">
         <div class="why-choose-icon">📱</div>
-        <h3>Всегда на связи</h3>
-        <p>Отвечаю на вопросы быстро. Вы всегда знаете статус проекта и сможете связаться со мной за минуты.</p>
+        <h3>На связи и отзывчив</h3>
+        <p>Отвечаю на вопросы оперативно. Вы знаете статус проекта, сроки ясны, общение прямое.</p>
       </div>
       <div class="why-choose-item">
-        <div class="why-choose-icon">🚀</div>
-        <h3>Работаю на результат</h3>
-        <p>Не просто сдаю проект — помогаю вам добиться целей. Моя миссия не в галочке, а в вашем успехе.</p>
+        <div class="why-choose-icon">⏱️</div>
+        <h3>Соблюдаю сроки</h3>
+        <p>Работаю по согласованному графику. Если будет задержка, предупреждаю заранее и объясняю причину.</p>
       </div>
       <div class="why-choose-item">
-        <div class="why-choose-icon">🔧</div>
-        <h3>Помогаю даже после запуска</h3>
-        <p>Бесплатная поддержка 3 месяца. Исправления, доработки, оптимизация — всё включено в пакет.</p>
+        <div class="why-choose-icon">💂</div>
+        <h3>Качество и надежность</h3>
+        <p>Пишу чистый код, проверяю функциональность перед запуском. Тестирую на разных браузерах и устройствах.</p>
       </div>
     </div>
   </section>
 
   <section class="section audience">
-    <h2>Для кого мои услуги</h2>
+    <h2>Для кого я работаю лучше всего</h2>
     <div class="audience-grid">
       <div class="audience-card">
-        <div class="audience-icon">🚀</div>
-        <h3>Стартапы</h3>
-        <p>Помогаю запустить MVP быстро и эффективно, чтобы привлечь первых клиентов и инвесторов.</p>
+        <div class="audience-icon">🎓</div>
+        <h3>Фрилансеры и мастера</h3>
+        <p>Парикмахеры, тренеры, консультанты — нужен сайт-визитка с информацией и контактами.</p>
       </div>
       <div class="audience-card">
-        <div class="audience-icon">🏢</div>
+        <div class="audience-icon">🏪</div>
         <h3>Малый бизнес</h3>
-        <p>Создаю сайты для локальных компаний, которые хотят расширить присутствие в интернете.</p>
+        <p>Небольшие компании, которые хотят интернет-присутствие и рост в соцсетях.</p>
       </div>
       <div class="audience-card">
-        <div class="audience-icon">📈</div>
-        <h3>Растущие компании</h3>
-        <p>Разрабатываю масштабируемые решения для бизнеса, который готов к росту и новым вызовам.</p>
+        <div class="audience-icon">🌟</div>
+        <h3>Личные проекты</h3>
+        <p>Портфолио, блоги, side projects. Нужен хороший дизайн и адаптивность.</p>
       </div>
     </div>
   </section>
 
   <section class="section services">
-    <h2>Что я могу для вас сделать</h2>
+    <h2>Что я могу сделать</h2>
     <div class="services">
       <div class="service-card">
-        <div class="service-icon">🚀</div>
-        <h3>Веб-разработка</h3>
-        <p>Создаю современные веб-приложения с использованием React, Next.js и других технологий. От лендингов до сложных платформ.</p>
+        <div class="service-icon">🌐</div>
+        <h3>Лендинги</h3>
+        <p>Одностраничные продающие страницы с аккуратным дизайном и быстрым откликом. От концепции до запуска за 2–3 недели.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">📱</div>
-        <h3>Мобильная разработка</h3>
-        <p>Разрабатываю мобильные приложения для iOS и Android с помощью React Native. Быстро и эффективно.</p>
+        <div class="service-icon">🖥️</div>
+        <h3>Сайты-визитки</h3>
+        <p>Информационные сайты для малого бизнеса, специалистов и компаний. Адаптивный дизайн, простая навигация, интеграция с аналитикой.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">🛠️</div>
-        <h3>Backend разработка</h3>
-        <p>Строю надежные серверные решения на Node.js, Express и базами данных. Масштабируемые и безопасные API.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎨</div>
-        <h3>UI/UX дизайн</h3>
-        <p>Проектирую пользовательские интерфейсы, которые не только красивы, но и удобны в использовании.</p>
+        <div class="service-icon">⚛️</div>
+        <h3>Веб-приложения</h3>
+        <p>Однопользовательские и простые многопользовательские приложения на React или Next.js. API интеграция, базовая аутентификация.</p>
       </div>
     </div>
   </section>
@@ -1103,91 +1278,105 @@
   </section>
 
   <section class="section trust">
-    <h2>Почему мне доверяют</h2>
+    <h2>Я постоянно улучшаю свои навыки</h2>
     <div class="trust-grid">
       <div class="trust-item">
-        <div class="trust-icon">⏱️</div>
-        <h4>Соблюдение сроков</h4>
-        <p>Все проекты сдаю вовремя. Средний срок разработки — 2-4 недели.</p>
+        <div class="trust-icon">📚</div>
+        <h4>Учусь и развиваюсь</h4>
+        <p>Следую трендам в веб-разработке. Коурсы, блоги, практика — стараюсь делать лучше.</p>
       </div>
       <div class="trust-item">
-        <div class="trust-icon">🔒</div>
-        <h4>Качество и надежность</h4>
-        <p>Пишу чистый, поддерживаемый код. Гарантирую работоспособность и безопасность.</p>
+        <div class="trust-icon">✅</div>
+        <h4>Честность прежде всего</h4>
+        <p>Скажу, если задача выходит за мои навыки или лучше поискать специалиста.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🎯</div>
+        <h4>Ясные сроки и цены</h4>
+        <p>Без скрытых платежей. Договумся заранее о сроках, стоимости и объеме работ.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⚙️</div>
+        <h4>Техническая забота</h4>
+        <p>Оптимизирую быстродействие, заботлюсь о SEO, тестирую на разных устройствах.</p>
       </div>
       <div class="trust-item">
         <div class="trust-icon">💬</div>
         <h4>Открытая коммуникация</h4>
-        <p>Регулярные обновления, прозрачность процесса. Всегда на связи.</p>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">📈</div>
-        <h4>Фокус на результат</h4>
-        <p>Работаю над тем, чтобы ваш сайт приносил реальную пользу бизнесу.</p>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">⭐</div>
-        <h4>Положительные отзывы</h4>
-        <p>20+ довольных клиентов. Смотрите кейсы ниже.</p>
+        <p>Обсуждаю проблемы по ходу разработки, не жду финального момента.</p>
       </div>
       <div class="trust-item">
         <div class="trust-icon">🔄</div>
-        <h4>Поддержка после запуска</h4>
-        <p>Помогаю с обновлениями и исправлениями в течение 3 месяцев после сдачи.</p>
+        <h4>После запуска помогаю</h4>
+        <p>Месяц бесплатной поддержки для правок и небольших изменений.</p>
       </div>
     </div>
   </section>
 
-  <section class="section cases">
-    <h2>Результаты моих клиентов</h2>
-    <div class="cases">
-      <div class="case-card">
-        <div class="case-image">🛒</div>
-        <div class="case-content">
-          <h3>E-commerce платформа</h3>
-          <p><strong>До:</strong> Продажи через старый сайт — 50 000 руб/мес.<br><strong>После:</strong> Продажи выросли до 125 000 руб/мес (+150%). Улучшена навигация и интеграция платежей.</p>
-          <div class="case-tags">
-            <span class="case-tag">React</span>
-            <span class="case-tag">Node.js</span>
-            <span class="case-tag">MongoDB</span>
+  <section class="section">
+    <h2>Мои проекты</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-preview">🎨</div>
+        <div class="portfolio-content">
+          <h3>Портфолио дизайнера</h3>
+          <p>Адаптивный портфолио с галереей работ, фильтрацией по категориям и модальными окнами. Быстрая загрузка изображений, хороший SEO.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">React</span>
+            <span class="portfolio-tag">Tailwind</span>
+            <span class="portfolio-tag">Responsive</span>
           </div>
         </div>
       </div>
-      <div class="case-card">
-        <div class="case-image">📊</div>
-        <div class="case-content">
-          <h3>Аналитический дашборд</h3>
-          <p><strong>До:</strong> Ручной анализ данных, 40 часов/неделя.<br><strong>После:</strong> Автоматизация сократила время на 20%. Экономия 50 000 руб/мес.</p>
-          <div class="case-tags">
-            <span class="case-tag">Vue.js</span>
-            <span class="case-tag">D3.js</span>
-            <span class="case-tag">Python</span>
+      <div class="portfolio-card">
+        <div class="portfolio-preview">🏋️</div>
+        <div class="portfolio-content">
+          <h3>Сайт фитнес-тренера</h3>
+          <p>Информационный сайт с описанием услуг, расписанием тренировок, формой записи через Telegram/WhatsApp, блогом с советами.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Next.js</span>
+            <span class="portfolio-tag">CSS</span>
+            <span class="portfolio-tag">Forms</span>
           </div>
         </div>
       </div>
-      <div class="case-card">
-        <div class="case-image">💬</div>
-        <div class="case-content">
-          <h3>Чат-приложение</h3>
-          <p><strong>До:</strong> 500 пользователей.<br><strong>После:</strong> 10 000+ активных пользователей. Масштабируемое решение с real-time чатом.</p>
-          <div class="case-tags">
-            <span class="case-tag">React</span>
-            <span class="case-tag">Socket.io</span>
-            <span class="case-tag">Express</span>
+      <div class="portfolio-card">
+        <div class="portfolio-preview">📝</div>
+        <div class="portfolio-content">
+          <h3>Приложение для заметок</h3>
+          <p>Простое веб-приложение для создания и управления заметками. Локальное хранилище (localStorage), рассортировка, удаление, экспорт.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">React</span>
+            <span class="portfolio-tag">Hooks</span>
+            <span class="portfolio-tag">localStorage</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="final-cta">
-    <div class="container">
-      <h2>Готовы обсудить ваш сайт?</h2>
-      <p>Напишите мне в Telegram — коротко расскажите о задаче, а я предложу понятный план, сроки и следующий шаг.</p>
-      <a href="https://t.me/dimaminsk?text=Здравствуйте!%20Хочу%20сайт,%20который%20будет%20приводить%20клиентов" class="telegram-btn" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-        Написать в Telegram
-      </a>
+  <section class="contact-form-section" id="contact">
+    <div class="contact-form-container">
+      <h2>Обсудим ваш проект</h2>
+      <form name="project" method="POST" netlify>
+        <div class="form-group">
+          <label for="name">Как вас зовут? *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон (опционально)</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="form-group">
+          <label for="message">Расскажите о вашем проекте *</label>
+          <textarea id="message" name="message" required placeholder="Что нужно сделать? Какие цели? Сроки?"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Отправить заявку</button>
+      </form>
     </div>
   </section>
 
@@ -1203,13 +1392,19 @@
       btn.appendChild(ripple);
       setTimeout(() => ripple.remove(), 600);
 
-      // Simulate action
-      btn.textContent = '✓ Контакты скопированы!';
-      btn.style.background = '#059669';
-      setTimeout(() => {
-        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 4.87 2 2 0 0 1 3.59 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10a16 16 0 0 0 6.08 6.08l.92-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.5z"/></svg> Связаться со мной`;
-        btn.style.background = '';
-      }, 2000);
+      // Scroll to contact form
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
     });
   </script>
 </body>
