@@ -90,7 +90,7 @@ ${phone ? `<b>Телефон:</b> ${escapeHtml(phone)}\n` : ''}
     if (!email) {
       console.warn('Client email is empty - skipping auto-response');
     } else if (resendApiKey && resendFromEmail) {
-      console.log("Sending auto-response to:", email);
+      console.log("Test mode: sending autoresponse to Resend account email");
 
       const autoResponseBody = `Спасибо, ${name}! Я получил вашу заявку и свяжусь с вами в течение 15 минут.`;
 
@@ -102,7 +102,7 @@ ${phone ? `<b>Телефон:</b> ${escapeHtml(phone)}\n` : ''}
         },
         body: JSON.stringify({
           from: resendFromEmail,
-          to: email,
+          to: 'trenbison@gmail.com',
           subject: 'Спасибо за заявку!',
           text: autoResponseBody,
         }),
