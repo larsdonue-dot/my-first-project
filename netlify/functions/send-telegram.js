@@ -16,6 +16,10 @@ exports.handler = async (event) => {
     };
   }
 
+  // Отладка: Проверяем переменные окружения Resend
+  console.log("RESEND_API_KEY:", process.env.RESEND_API_KEY ? "configured" : "NOT configured");
+  console.log("RESEND_FROM_EMAIL:", process.env.RESEND_FROM_EMAIL);
+
   try {
     // Парсим данные из формы
     const data = JSON.parse(event.body);
@@ -75,11 +79,53 @@ ${phone ? `<b>Телефон:</b> ${escapeHtml(phone)}\n` : ''}
       };
     }
 
+    console.log('✓ Telegram notification sent successfully');
+
+    // ========================================
+    // Отправка автоответа клиенту через Resend API
+    // ========================================
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const resendFromEmail = process.env.RESEND_FROM_EMAIL;
+
+    if (!email) {
+      console.warn('Client email is empty - skipping auto-response');
+    } else if (resendApiKey && resendFromEmail) {
+      console.log("Sending auto-response to:", email);
+
+      const autoResponseBody = `Спасибо, ${name}! Я получил вашу заявку и свяжусь с вами в течение 15 минут.`;
+
+      const emailResponse = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${resendApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: resendFromEmail,
+          to: email,
+          subject: 'Спасибо за заявку!',
+          text: autoResponseBody,
+        }),
+      });
+
+      console.log("Resend response status:", emailResponse.status);
+
+      if (!emailResponse.ok) {
+        const errorText = await emailResponse.text();
+        console.error("Resend error:", errorText);
+      } else {
+        const resendData = await emailResponse.json();
+        console.log('✓ Auto-response sent successfully via Resend. ID:', resendData.id);
+      }
+    } else {
+      console.warn('Resend credentials not configured - skipping auto-response');
+    }
+
     return {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
-        message: 'Notification sent to Telegram',
+        message: 'Notification sent to Telegram and email',
       }),
     };
   } catch (error) {
